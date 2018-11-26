@@ -2,6 +2,7 @@ package com.cc.springbase;
 
 import org.springframework.beans.factory.config.BeanDefinitionHolder;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
+import org.springframework.beans.factory.support.GenericBeanDefinition;
 import org.springframework.context.annotation.ClassPathBeanDefinitionScanner;
 
 import java.util.Set;
@@ -18,6 +19,12 @@ public class EnhanceBeanScanner extends ClassPathBeanDefinitionScanner {
 
     @Override
     protected Set<BeanDefinitionHolder> doScan(String... basePackages) {
-        return super.doScan(basePackages);
+        Set<BeanDefinitionHolder> beanDefinitions =   super.doScan(basePackages);
+        for (BeanDefinitionHolder holder : beanDefinitions) {
+            GenericBeanDefinition definition = (GenericBeanDefinition) holder.getBeanDefinition();
+            definition.getPropertyValues().add("innerClassName", definition.getBeanClassName());
+            definition.setBeanClass(EnhanceFactoryBean.class);
+        }
+        return beanDefinitions;
     }
 }

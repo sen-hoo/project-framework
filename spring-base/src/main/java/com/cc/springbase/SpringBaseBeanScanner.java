@@ -20,11 +20,6 @@ public class SpringBaseBeanScanner extends ClassPathBeanDefinitionScanner {
     @Override
     protected Set<BeanDefinitionHolder> doScan(String... basePackages) {
         Set<BeanDefinitionHolder> beanDefinitions =   super.doScan(basePackages);
-//        for (BeanDefinitionHolder holder : beanDefinitions) {
-//            GenericBeanDefinition definition = (GenericBeanDefinition) holder.getBeanDefinition();
-//            definition.getPropertyValues().add("innerClassName", definition.getBeanClassName());
-//            definition.setBeanClass(FactoryBeanTest.class);
-//        }
         return beanDefinitions;
     }
 }
