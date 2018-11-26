@@ -1,0 +1,6 @@
+rootProject.name = 'project-framework'
+include 'springboot-app'
+include 'springboot-web'
+include 'springcloud-provider'
+include 'spring-base'
+

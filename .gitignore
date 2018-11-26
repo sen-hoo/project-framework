@@ -1,0 +1,40 @@
+# 编译生成的文件
+*.class
+*.jar
+*.war
+*.ear
+*.scssc
+src/main/thrift/com
+src/main/resources/META-INF/thrift
+src/main/resources/api
+src/main/resources/mybatis-mapping
+
+# ivy lib folder
+/lib
+
+# ant output folder
+build
+
+# maven output folder
+/target
+
+# gradle output folder
+.gradle
+gradle
+gradlew
+gradlew.bat
+
+# Intellij IDEA config
+.idea
+*.iml
+/out
+/classes
+
+# Eclipse config
+.classpath
+.project
+.settings
+/bin
+
+# icon cache
+.DS_Store
