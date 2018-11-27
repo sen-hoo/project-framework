@@ -21,6 +21,7 @@ subprojects {
     ext {
         springVersion = "5.1.2.RELEASE"
         springbootVersion = "2.1.0.RELEASE"
+        servletApiVersion = "3.1.0"
     }
 
     [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'

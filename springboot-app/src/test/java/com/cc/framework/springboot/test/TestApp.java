@@ -1,7 +1,7 @@
 package com.cc.framework.springboot.test;
 
-import com.cc.framework.springboot.app.service.BelleService;
-import com.cc.framework.springboot.app.service.impl.BelleServiceImpl;
+import com.cc.springboot.app.service.BelleService;
+import com.cc.springboot.app.service.impl.BelleServiceImpl;
 import org.junit.Test;
 
 /**
