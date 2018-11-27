@@ -1,4 +1,4 @@
-package com.cc.springbase.events;
+package com.cc.springbase.scan.events;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationEvent;

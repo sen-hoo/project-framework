@@ -1,7 +1,11 @@
 package com.cc.framework.springboot.app;
 
+import com.cc.framework.springboot.app.service.BelleService;
+import com.cc.framework.springboot.app.test.TestBean;
+import com.cc.springbase.EnableSpringBase;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 /**
  * @Description TODO
@@ -9,10 +13,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Date 2018/11/26 11:37
  **/
 @SpringBootApplication
+@EnableSpringBase()
 public class AppBoot {
 
     public static void main(String[] args) {
-        SpringApplication.run(AppBoot.class, args);
+        ApplicationContext context = SpringApplication.run(AppBoot.class, args);
+//        TestBean testBean = context.getBean(TestBean.class);
+//        testBean.doOutput();
+        BelleService belleService = context.getBean(BelleService.class);
+        System.out.println(belleService.genBelle());
     }
 
 }

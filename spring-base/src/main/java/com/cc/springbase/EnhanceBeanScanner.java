@@ -1,5 +1,6 @@
 package com.cc.springbase;
 
+import com.cc.springbase.enhance.EnhanceFactoryBean;
 import org.springframework.beans.factory.config.BeanDefinitionHolder;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.GenericBeanDefinition;
@@ -8,7 +9,9 @@ import org.springframework.context.annotation.ClassPathBeanDefinitionScanner;
 import java.util.Set;
 
 /**
- * @Description TODO
+ * 被此扫描器扫描的java bean都会被代理日志增强
+ *
+ * @Description 增强包扫描器
  * @Author sen.hu
  * @Date 2018/11/26 16:40
  **/
@@ -19,7 +22,7 @@ public class EnhanceBeanScanner extends ClassPathBeanDefinitionScanner {
 
     @Override
     protected Set<BeanDefinitionHolder> doScan(String... basePackages) {
-        Set<BeanDefinitionHolder> beanDefinitions =   super.doScan(basePackages);
+        Set<BeanDefinitionHolder> beanDefinitions = super.doScan(basePackages);
         for (BeanDefinitionHolder holder : beanDefinitions) {
             GenericBeanDefinition definition = (GenericBeanDefinition) holder.getBeanDefinition();
             definition.getPropertyValues().add("innerClassName", definition.getBeanClassName());

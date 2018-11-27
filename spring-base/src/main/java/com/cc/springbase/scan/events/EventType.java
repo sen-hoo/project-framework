@@ -1,4 +1,4 @@
-package com.cc.springbase.events;
+package com.cc.springbase.scan.events;
 
 public enum EventType {
     ContextStarted,

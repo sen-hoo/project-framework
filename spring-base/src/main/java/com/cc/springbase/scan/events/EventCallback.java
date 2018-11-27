@@ -1,9 +1,9 @@
-package com.cc.springbase.events;
+package com.cc.springbase.scan.events;
 
 import org.springframework.context.ApplicationContext;
 
 /**
- * @Description TODO
+ * @Description 容器时间监听回调
  * @Author sen.hu
  * @Date 2018/11/26 14:57
  **/

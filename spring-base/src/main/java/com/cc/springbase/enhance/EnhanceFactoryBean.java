@@ -1,4 +1,4 @@
-package com.cc.springbase;
+package com.cc.springbase.enhance;
 
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.InitializingBean;
@@ -22,13 +22,13 @@ public class EnhanceFactoryBean<T> implements InitializingBean, FactoryBean<T> {
     @Override
     public T getObject() throws Exception {
         Class innerClass = Class.forName(innerClassName);
-        if (innerClass.isInterface()) {
-            return (T) EnhanceProxy.enhanceBean(innerClass);
+        if (innerClass.isInterface() && !innerClass.isAnnotation()) {
+            return (T) EnhanceProxyFactory.enhanceBean(innerClass);
         } else {//java class
             Enhancer enhancer = new Enhancer();
             enhancer.setSuperclass(innerClass);
             enhancer.setNamingPolicy(SpringNamingPolicy.INSTANCE);
-            enhancer.setCallback(EnhanceProxy.newMethodEnhancerProxy());
+            enhancer.setCallback(new EnhanceProxyFactory.MethodEnhancer());
             return (T) enhancer.create();
         }
     }

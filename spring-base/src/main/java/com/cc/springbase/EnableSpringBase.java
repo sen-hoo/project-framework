@@ -7,8 +7,11 @@ import java.lang.annotation.*;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Import(SpringBaseBeanScanner.class)
+@Import(SpringBaseBeanRegistrar.class)
 public @interface EnableSpringBase {
-    String[] basePackages() default "com.cc.springbase";
-    String[] enhancePackages();
+    boolean enabled() default true;
+    //spring base所在位置
+    String[] customerScanPackages() default "";
+    //增强代理扫码
+    String[] enhancePackages() default "";
 }

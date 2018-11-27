@@ -38,3 +38,5 @@ gradlew.bat
 
 # icon cache
 .DS_Store
+
+logs

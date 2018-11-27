@@ -1,4 +1,4 @@
-package com.cc.springbase.plugins;
+package com.cc.springbase.scan.plugins;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
