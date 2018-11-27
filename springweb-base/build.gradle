@@ -1,0 +1,9 @@
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: servletApiVersion
+
+    compile group: 'org.springframework', name: 'spring-web', version: springVersion
+    compile group: 'org.springframework', name: 'spring-webmvc', version: springVersion
+
+}
