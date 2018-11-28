@@ -1,9 +1,19 @@
+group 'com.cc'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'maven'
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'com.cc', name: 'base-common', version: ccComponentVersion
+    compile group: 'com.cc', name: 'base-utils', version: ccComponentVersion
+
     compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: servletApiVersion
 
     compile group: 'org.springframework', name: 'spring-web', version: springVersion
     compile group: 'org.springframework', name: 'spring-webmvc', version: springVersion
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.53'
 
 }
