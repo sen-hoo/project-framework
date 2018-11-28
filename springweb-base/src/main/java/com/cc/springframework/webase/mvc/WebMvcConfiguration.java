@@ -4,6 +4,7 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import com.cc.springframework.webase.interceptors.TraceInterceptor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.stereotype.Component;
@@ -15,13 +16,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @Description TODO
+ * @Description 增加web mvc基础配置
  * @Author sen.hu
  * @Date 2018/11/28 17:28
  **/
 @Component
 public class WebMvcConfiguration extends WebMvcConfigurationSupport{
 
+    @Autowired
     private TraceInterceptor traceInterceptor;
 
     @Override
