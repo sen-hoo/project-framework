@@ -1,15 +1,19 @@
-package com.cc.springframework.webase.mvc;
+package com.cc.framework.webase.mvc;
 
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
-import com.cc.springframework.webase.interceptors.TraceInterceptor;
+import com.cc.framework.webase.interceptors.TraceInterceptor;
+import com.cc.framework.webase.mvc.version.VersionRequestMappingHandlerMapping;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
 import java.nio.charset.Charset;
 import java.util.ArrayList;
@@ -25,6 +29,16 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport{
 
     @Autowired
     private TraceInterceptor traceInterceptor;
+
+//    @Conditional()
+    @Bean
+    @Override
+    public RequestMappingHandlerMapping requestMappingHandlerMapping() {
+        VersionRequestMappingHandlerMapping requestMappingHandlerMapping = new VersionRequestMappingHandlerMapping();
+        requestMappingHandlerMapping.setOrder(0);
+        requestMappingHandlerMapping.setInterceptors(getInterceptors());
+        return requestMappingHandlerMapping;
+    }
 
     @Override
     protected void configureMessageConverters(List<HttpMessageConverter<?>> converters) {

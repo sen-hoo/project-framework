@@ -1,7 +1,3 @@
-group 'com.cc'
-version '1.0-SNAPSHOT'
-
-apply plugin: 'java'
 apply plugin: 'maven'
 
 dependencies {
@@ -15,5 +11,12 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-webmvc', version: springVersion
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
     compile group: 'com.alibaba', name: 'fastjson', version: '1.2.53'
+}
 
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            mavenLocal()
+        }
+    }
 }

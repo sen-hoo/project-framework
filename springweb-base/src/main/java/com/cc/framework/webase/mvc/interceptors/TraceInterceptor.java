@@ -1,4 +1,4 @@
-package com.cc.springframework.webase.mvc.interceptors;
+package com.cc.framework.webase.mvc.interceptors;
 
 import com.cc.common.Constants;
 import com.cc.utils.TraceUtil;

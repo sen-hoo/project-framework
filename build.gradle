@@ -18,6 +18,7 @@ subprojects {
 
     ext {
         ccComponentVersion = '1.0-SNAPSHOT'
+        ccProjectFrameworkVersion = '1.0-SNAPSHOT'
         springVersion = '5.1.2.RELEASE'
         springbootVersion = '2.1.0.RELEASE'
         servletApiVersion = '3.1.0'
