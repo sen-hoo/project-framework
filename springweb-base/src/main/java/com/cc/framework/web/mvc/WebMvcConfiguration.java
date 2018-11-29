@@ -7,6 +7,7 @@ import com.cc.framework.web.mvc.interceptors.TraceInterceptor;
 import com.cc.framework.web.mvc.version.VersionRequestMappingHandlerMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.stereotype.Component;
@@ -23,7 +24,7 @@ import java.util.List;
  * @Author sen.hu
  * @Date 2018/11/28 17:28
  **/
-@Component
+@Configuration
 public class WebMvcConfiguration extends WebMvcConfigurationSupport{
 
     @Autowired
@@ -70,8 +71,7 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport{
     @Override
     protected void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(traceInterceptor)
-                .addPathPatterns("/**")
-                ;
+                .addPathPatterns("/**");
         super.addInterceptors(registry);
     }
 }

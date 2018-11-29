@@ -34,7 +34,9 @@ public class RequestVersionCondition implements RequestCondition<RequestVersionC
     @Nullable
     @Override
     public RequestVersionCondition getMatchingCondition(HttpServletRequest request) {
-        Matcher m = VERSION_PATTERN.matcher(request.getPathInfo());
+        String path = request.getPathInfo();
+        System.out.println(path);
+        Matcher m = VERSION_PATTERN.matcher(path);
         if (m.find()) {
             float reqVersion = Float.valueOf(m.group(1));
             //如果请求版本号>=配置版本号

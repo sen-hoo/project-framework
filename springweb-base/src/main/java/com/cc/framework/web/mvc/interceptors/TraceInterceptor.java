@@ -25,6 +25,6 @@ public class TraceInterceptor implements HandlerInterceptor {
             traceId = TraceUtil.genTraceId();
         }
         MDC.put(Constants.TRACE_ID_LOGFILE_NAME, traceId);
-        return false;
+        return true;
     }
 }
