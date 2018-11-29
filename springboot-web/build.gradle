@@ -3,6 +3,9 @@ apply plugin: 'maven'
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'com.cc', name: 'base-common', version: ccComponentVersion
+    compile group: 'com.cc', name: 'base-utils', version: ccComponentVersion
+    compile group: 'com.cc', name: 'spring-base', version: ccProjectFrameworkVersion
     compile group: 'com.cc', name: 'springweb-base', version: ccProjectFrameworkVersion
 
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springbootVersion
