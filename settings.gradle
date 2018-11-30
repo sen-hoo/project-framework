@@ -4,4 +4,5 @@ include 'springboot-web'
 include 'springcloud-provider'
 include 'spring-base'
 include 'springweb-base'
+include 'spring-test'
 
