@@ -10,7 +10,6 @@ import java.lang.annotation.*;
 @Import(SpringBaseBeanRegistrar.class)
 public @interface EnableSpringBase {
     boolean enabled() default true;
-    boolean enableWebbase() default false;
     //spring base所在位置
     String[] customerScanPackages() default "";
     //增强代理扫码

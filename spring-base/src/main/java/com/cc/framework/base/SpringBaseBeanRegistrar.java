@@ -36,9 +36,9 @@ public class SpringBaseBeanRegistrar implements ImportBeanDefinitionRegistrar, R
         if (attributes.getBoolean("enabled")) {
             List<String> customerScanPackages = handlePackages(attributes.getStringArray("customerScanPackages"));
             customerScanPackages.add("com.cc.framework.base.scan");
-            if (attributes.getBoolean("enableWebbase")) {
-                customerScanPackages.add("com.cc.framework.web");
-            }
+//            if (attributes.getBoolean("enableWebbase")) {
+//                customerScanPackages.add("com.cc.framework.web");
+//            }
             logger.debug("start initializing spring base beans");
             SpringBaseBeanScanner baseBeanScanner = new SpringBaseBeanScanner(registry);
             baseBeanScanner.doScan(customerScanPackages.toArray(new String[customerScanPackages.size()]));
