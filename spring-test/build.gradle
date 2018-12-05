@@ -1,0 +1,20 @@
+group 'com.cc'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'com.cc', name: 'base-common', version: ccComponentVersion
+    compile group: 'com.cc', name: 'base-utils', version: ccComponentVersion
+
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springbootVersion
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.53'
+
+}
