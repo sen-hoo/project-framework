@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
@@ -13,9 +14,10 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  * @Author sen.hu
  * @Date 2018/11/26 11:38
  **/
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.cc.framework.springboot.web", "com.cc.framework.web.mvc"})
 @EnableSpringBase(enabled = true, enableWebbase = true)
-@EnableWebMvc
+//@EnableWebMvc
+//@ComponentScan(value = {})
 public class WebAppBoot {
 
     public static void main(String[] args) {
