@@ -24,13 +24,7 @@ import java.util.List;
  * @Author sen.hu
  * @Date 2018/11/28 17:28
  **/
-@Configuration
 public class WebMvcConfiguration extends WebMvcConfigurationSupport{
-
-    @Autowired
-    private TraceInterceptor traceInterceptor;
-
-//    @Conditional()
 
     @Bean
     @Override
@@ -68,10 +62,10 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport{
         converters.add(converter);
     }
 
-    @Override
-    protected void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(traceInterceptor)
-                .addPathPatterns("/**");
-        super.addInterceptors(registry);
-    }
+//    @Override
+//    protected void addInterceptors(InterceptorRegistry registry) {
+//        registry.addInterceptor(traceInterceptor)
+//                .addPathPatterns("/**");
+//        super.addInterceptors(registry);
+//    }
 }
