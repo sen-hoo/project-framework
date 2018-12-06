@@ -1,0 +1,17 @@
+
+apply plugin: 'maven'
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'com.cc', name: 'base-common', version: ccComponentVersion
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springbootVersion
+}
+
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            mavenLocal()
+        }
+    }
+}
