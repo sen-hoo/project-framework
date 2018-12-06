@@ -24,7 +24,7 @@ import java.util.List;
  * @Author sen.hu
  * @Date 2018/11/28 17:28
  **/
-public class WebMvcConfiguration extends WebMvcConfigurationSupport{
+public class BaseWebMvcConfig extends WebMvcConfigurationSupport{
 
     @Bean
     @Override
