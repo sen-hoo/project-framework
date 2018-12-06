@@ -16,7 +16,6 @@ import org.springframework.web.servlet.NoHandlerFoundException;
  * @Author sen.hu
  * @Date 2018/11/29 13:36
  **/
-@RestControllerAdvice
 public class GloableExceptionAdvice {
 
     private Logger logger = LoggerFactory.getLogger(GloableExceptionAdvice.class);
