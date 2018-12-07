@@ -32,14 +32,17 @@ public class GloableExceptionAdvice {
         return ResultBuilder.getResultException(ResultBuilder.BaseResult.BadRequest);
     }
     @ExceptionHandler(NoHandlerFoundException.class)
+    @ResponseStatus(HttpStatus.OK)
     public ResultBuilder.Result exception404(NoHandlerFoundException e) {
         return ResultBuilder.getResultException(ResultBuilder.BaseResult.NotFound);
     }
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+    @ResponseStatus(HttpStatus.OK)
     public ResultBuilder.Result exception405(MethodArgumentTypeMismatchException e) {
         return ResultBuilder.getResultException(ResultBuilder.BaseResult.MethodNotAllowed);
     }
     @ExceptionHandler(ResultBuilder.CommonResultException.class)
+    @ResponseStatus(HttpStatus.OK)
     public ResultBuilder.Result businessException(ResultBuilder.CommonResultException e) {
         return ResultBuilder.getCommonBusinessExcepiton(e.getMsg());
     }
