@@ -26,22 +26,25 @@ public class GloableExceptionAdvice {
         logger.error("ServerError:", e);
         return ResultBuilder.getResultException(ResultBuilder.BaseResult.ServerError);
     }
-    @ExceptionHandler(MissingServletRequestParameterException.class)
+    @ExceptionHandler(value = {MissingServletRequestParameterException.class, IllegalArgumentException.class})
     @ResponseStatus(HttpStatus.OK)
     public ResultBuilder.Result exception400(MissingServletRequestParameterException e) {
         return ResultBuilder.getResultException(ResultBuilder.BaseResult.BadRequest);
     }
     @ExceptionHandler(NoHandlerFoundException.class)
+    @ResponseStatus(HttpStatus.OK)
     public ResultBuilder.Result exception404(NoHandlerFoundException e) {
         return ResultBuilder.getResultException(ResultBuilder.BaseResult.NotFound);
     }
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+    @ResponseStatus(HttpStatus.OK)
     public ResultBuilder.Result exception405(MethodArgumentTypeMismatchException e) {
         return ResultBuilder.getResultException(ResultBuilder.BaseResult.MethodNotAllowed);
     }
     @ExceptionHandler(ResultBuilder.CommonResultException.class)
+    @ResponseStatus(HttpStatus.OK)
     public ResultBuilder.Result businessException(ResultBuilder.CommonResultException e) {
-        return ResultBuilder.getCommonBusinessExcepiton(e.getMsg());
+        return ResultBuilder.getBaseBusinessException(e.getMsg());
     }
 
 }

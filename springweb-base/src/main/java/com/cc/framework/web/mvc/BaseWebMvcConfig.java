@@ -26,14 +26,14 @@ import java.util.List;
  **/
 public class BaseWebMvcConfig extends WebMvcConfigurationSupport{
 
-    @Bean
-    @Override
-    public RequestMappingHandlerMapping requestMappingHandlerMapping() {
-        VersionRequestMappingHandlerMapping requestMappingHandlerMapping = new VersionRequestMappingHandlerMapping();
-        requestMappingHandlerMapping.setOrder(0);
-        requestMappingHandlerMapping.setInterceptors(getInterceptors());
-        return requestMappingHandlerMapping;
-    }
+//    @Bean
+//    @Override
+//    public RequestMappingHandlerMapping requestMappingHandlerMapping() {
+//        VersionRequestMappingHandlerMapping requestMappingHandlerMapping = new VersionRequestMappingHandlerMapping();
+//        requestMappingHandlerMapping.setOrder(0);
+//        requestMappingHandlerMapping.setInterceptors(getInterceptors());
+//        return requestMappingHandlerMapping;
+//    }
 
     @Override
     protected void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
