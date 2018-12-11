@@ -26,7 +26,7 @@ public class GloableExceptionAdvice {
         logger.error("ServerError:", e);
         return ResultBuilder.getResultException(ResultBuilder.BaseResult.ServerError);
     }
-    @ExceptionHandler(MissingServletRequestParameterException.class)
+    @ExceptionHandler(value = {MissingServletRequestParameterException.class, IllegalArgumentException.class})
     @ResponseStatus(HttpStatus.OK)
     public ResultBuilder.Result exception400(MissingServletRequestParameterException e) {
         return ResultBuilder.getResultException(ResultBuilder.BaseResult.BadRequest);
@@ -44,7 +44,7 @@ public class GloableExceptionAdvice {
     @ExceptionHandler(ResultBuilder.CommonResultException.class)
     @ResponseStatus(HttpStatus.OK)
     public ResultBuilder.Result businessException(ResultBuilder.CommonResultException e) {
-        return ResultBuilder.getCommonBusinessExcepiton(e.getMsg());
+        return ResultBuilder.getBaseBusinessException(e.getMsg());
     }
 
 }
