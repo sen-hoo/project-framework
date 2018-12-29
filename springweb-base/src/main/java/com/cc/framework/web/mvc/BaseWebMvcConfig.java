@@ -43,13 +43,13 @@ public class BaseWebMvcConfig extends WebMvcConfigurationSupport{
                 // 保留map空的字段
                 SerializerFeature.WriteMapNullValue,
                 // 将String类型的null转成""
-                SerializerFeature.WriteNullStringAsEmpty,
+                //SerializerFeature.WriteNullStringAsEmpty,
                 // 将Number类型的null转成0
-                SerializerFeature.WriteNullNumberAsZero,
+                //SerializerFeature.WriteNullNumberAsZero,
                 // 将List类型的null转成[]
                 SerializerFeature.WriteNullListAsEmpty,
                 // 将Boolean类型的null转成false
-                SerializerFeature.WriteNullBooleanAsFalse,
+                //SerializerFeature.WriteNullBooleanAsFalse,
                 // 避免循环引用
                 SerializerFeature.DisableCircularReferenceDetect
         );
