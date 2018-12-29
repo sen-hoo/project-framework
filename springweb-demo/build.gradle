@@ -1,14 +1,22 @@
-group 'com.cc'
-version '1.0-SNAPSHOT'
-
-apply plugin: 'java'
-
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-}
+apply plugin: 'war'
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile project(':springsealed-core')
+
+    providedRuntime group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+    compile group: 'org.springframework', name: 'spring-webmvc', version: springVersion
+    compile group: 'org.springframework', name: 'spring-web', version: springVersion
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.54'
+
+}
+
+def env = System.getProperty("env") ?: "dev"
+
+sourceSets {
+    main {
+        resources {
+            srcDirs=["src/main/resources", "src/main/env/$env"]
+        }
+    }
 }
