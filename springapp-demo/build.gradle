@@ -1,0 +1,21 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'application'
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile project(':springsealed-core')
+}
+
+def env = System.getProperty("env") ?: "dev"
+
+sourceSets {
+    main {
+        resources {
+            srcDirs=["src/main/resources", "src/main/env/$env"]
+        }
+    }
+}
+
+
+mainClassName='com.cc.springapp.demo.AppBoot'
