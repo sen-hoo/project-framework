@@ -13,10 +13,12 @@ import org.springframework.web.servlet.ModelAndView;
 public class MainController {
 
 
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/123")
     public ModelAndView index() {
         ModelAndView index = new ModelAndView("index");
         index.addObject("title", "springweb-demo");
+        index.addObject("end", "springweb-demo");
+
         return index;
     }
 
