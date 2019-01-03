@@ -1,0 +1,7 @@
+apply plugin: 'maven'
+apply plugin: 'application'
+mainClassName='com.cc.project.test.TestBoot'
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

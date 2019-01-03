@@ -11,4 +11,5 @@ include 'springboot-app-demo'
 include 'springboot-web-demo'
 include 'springweb-demo'
 include 'design-pattern'
+include 'project-test'
 
