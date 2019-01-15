@@ -2,6 +2,8 @@ package com.cc.springweb.demo.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.async.DeferredResult;
+import org.springframework.web.context.request.async.WebAsyncTask;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -45,6 +47,30 @@ public class TestController {
                 return "OK";
             }
         };
+    }
+
+    @RequestMapping(value = "async2")
+    public WebAsyncTask aysncTest2() {
+        Callable<String> buzzCall = new Callable<String>() {
+            @Override
+            public String call() throws Exception {
+                Thread.sleep(2 * 1000);
+                return "async2 OK";
+            }
+        };
+        WebAsyncTask webAsyncTask = new WebAsyncTask(300, buzzCall);
+        webAsyncTask.onTimeout(() -> {
+            return  "timeout";
+        });
+        return webAsyncTask;
+    }
+
+    @RequestMapping(value = "async3")
+    public DeferredResult<String> asyncTest3() {
+        DeferredResult<String> result = new DeferredResult<>();
+        //TODO
+
+        return null;
     }
 
 }
