@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Callable;
 
 /**
  * @Description 测试接口类
@@ -33,6 +34,17 @@ public class TestController {
         ret.put("age", 18);
         ret.put("data", data);
         return ret;
+    }
+
+    @RequestMapping(value = "async")
+    public Callable<String> asyncTest() {
+        return new Callable<String>() {
+            @Override
+            public String call() throws Exception {
+                Thread.sleep(60 * 1000);
+                return "OK";
+            }
+        };
     }
 
 }
