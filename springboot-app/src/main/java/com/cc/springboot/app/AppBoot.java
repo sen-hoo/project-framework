@@ -1,7 +1,6 @@
 package com.cc.springboot.app;
 
 import com.cc.springboot.app.service.BelleService;
-import com.cc.springframework.base.EnableSpringBase;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -12,7 +11,6 @@ import org.springframework.context.ApplicationContext;
  * @Date 2018/11/26 11:37
  **/
 @SpringBootApplication
-@EnableSpringBase()
 public class AppBoot {
 
     public static void main(String[] args) {

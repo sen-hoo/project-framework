@@ -12,4 +12,5 @@ include 'springboot-web-demo'
 include 'springweb-demo'
 include 'design-pattern'
 include 'project-test'
+include 'springsealed-webcore'
 

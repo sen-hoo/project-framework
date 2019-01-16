@@ -1,4 +1,4 @@
-package com.cc.framework.web.mvc.version;
+package com.cc.springsealed.webcore.version;
 
 import org.springframework.lang.Nullable;
 import org.springframework.web.servlet.mvc.condition.RequestCondition;
@@ -8,7 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @Description TODO
+ * @Description 请求api version判断
  * @Author sen.hu
  * @Date 2018/11/29 17:44
  **/

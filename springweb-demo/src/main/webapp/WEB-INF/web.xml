@@ -5,6 +5,7 @@
     <filter>
         <filter-name>characterEncodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <!--异步请求支持-->
         <async-supported>true</async-supported>
         <init-param>
             <param-name>encoding</param-name>
