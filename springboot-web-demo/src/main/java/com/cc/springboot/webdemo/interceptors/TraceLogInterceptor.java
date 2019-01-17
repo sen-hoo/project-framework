@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
 
 /**
- * @Description 日志切面
+ * @Description controller日志切面
  * @Author sen.hu
  * @Date 2019/1/16 14:27
  **/
