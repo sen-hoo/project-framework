@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.web.servlet.config.annotation.AsyncSupportConfigurer;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 import java.nio.charset.Charset;
@@ -88,5 +89,14 @@ public class BaseWebMvcConfig extends WebMvcConfigurationSupport{
         configurer.setTaskExecutor(mvcThreadPool);
         //退出时间
         configurer.setDefaultTimeout(15 * 1000);
+    }
+
+    /**
+     * 全局设置跨域问题，还可以是用@CrossOrigin注解进行细粒度配置
+     * @param registry
+     */
+    @Override
+    protected void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**");
     }
 }
