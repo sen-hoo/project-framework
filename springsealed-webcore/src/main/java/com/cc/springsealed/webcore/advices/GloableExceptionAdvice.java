@@ -25,27 +25,27 @@ public class GloableExceptionAdvice {
     @ResponseStatus(HttpStatus.OK)
     public ResultBuilder.Result exception500(Exception e) {
         logger.error("ServerError:", e);
-        return ResultBuilder.getResultException(ResultBuilder.BaseResult.ServerError);
+        return ResultBuilder.getBaseResult(ResultBuilder.BaseResult.ServerError);
     }
     @ExceptionHandler(value = {MissingServletRequestParameterException.class, IllegalArgumentException.class})
     @ResponseStatus(HttpStatus.OK)
     public ResultBuilder.Result exception400(MissingServletRequestParameterException e) {
-        return ResultBuilder.getResultException(ResultBuilder.BaseResult.BadRequest);
+        return ResultBuilder.getBaseResult(ResultBuilder.BaseResult.BadRequest);
     }
     @ExceptionHandler(NoHandlerFoundException.class)
     @ResponseStatus(HttpStatus.OK)
     public ResultBuilder.Result exception404(NoHandlerFoundException e) {
-        return ResultBuilder.getResultException(ResultBuilder.BaseResult.NotFound);
+        return ResultBuilder.getBaseResult(ResultBuilder.BaseResult.NotFound);
     }
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     @ResponseStatus(HttpStatus.OK)
     public ResultBuilder.Result exception405(MethodArgumentTypeMismatchException e) {
-        return ResultBuilder.getResultException(ResultBuilder.BaseResult.MethodNotAllowed);
+        return ResultBuilder.getBaseResult(ResultBuilder.BaseResult.MethodNotAllowed);
     }
-    @ExceptionHandler(ResultBuilder.CommonResultException.class)
+    @ExceptionHandler(ResultBuilder.CustomizedException.class)
     @ResponseStatus(HttpStatus.OK)
-    public ResultBuilder.Result businessException(ResultBuilder.CommonResultException e) {
-        return ResultBuilder.getBaseBusinessException(e.getMsg());
+    public ResultBuilder.Result businessException(ResultBuilder.CustomizedException e) {
+        return ResultBuilder.getBaseResult(e.getDefaultMsg());
     }
 
 }
